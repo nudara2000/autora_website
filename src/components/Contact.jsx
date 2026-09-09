@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section className="contact" id="contact">
       <div>
-        <p className="small-title">CONTACT US</p>
+        <p className="small-title">CAN’T FIND YOUR PART?</p>
         <h2>Tell us what you need</h2>
         <p>Send your vehicle make, model, year and chassis number.</p>
       </div>

@@ -1,7 +1,7 @@
 /* MAIN COLOURS — edit these values to change the website theme */
 :root {
-  --red: #ef3e23;
   --dark: #101618;
+  --red: #0c7a98;
   --light: #f4f6f7;
   --grey: #687377;
   --white: #ffffff;
@@ -64,7 +64,7 @@ h2 { margin: 10px 0 25px; font-size: clamp(32px, 4vw, 55px); }
 .contact form { padding: 30px; background: white; }
 .contact input, .contact textarea { width: 100%; margin-bottom: 15px; padding: 15px; border: 1px solid #d8dfe1; background: var(--light); }
 .contact .main-button { width: 100%; }
-footer { padding: 30px 5%; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid #d8dfe1; color: var(--grey); }
+footer { padding: 15px 5%; display: flex; justify-content: space-between; gap: 15px; border-top: 1px solid #d8dfe1; color: var(--grey); }
 
 @media (max-width: 900px) {
   .hero, .about { grid-template-columns: 1fr; }
