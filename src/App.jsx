@@ -12,23 +12,18 @@ export default function App() {
 
   function selectCategory(category) {
     setSelectedCategory(category);
-    document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("catalogue")?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
-    <>
+    <main>
       <Header />
-      <main>
-        <Hero />
-        <PartsCatalogue
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-        <Categories onSelectCategory={selectCategory} />
-        <WhyAutora />
-        <Contact />
-      </main>
+      <Hero />
+      <PartsCatalogue selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+      <Categories onSelectCategory={selectCategory} />
+      <WhyAutora />
+      <Contact />
       <Footer />
-    </>
+    </main>
   );
 }

@@ -1,69 +1,12 @@
 import { useState } from "react";
+import { CarFront, ChevronRight, CircleGauge, Cog, Search, X, Zap } from "lucide-react";
 import { categories, products } from "../data";
+const icons = { "Body Parts": CarFront, Engine: Cog, Lighting: Zap, Suspension: CircleGauge };
 
 export default function PartsCatalogue({ selectedCategory, setSelectedCategory }) {
   const [search, setSearch] = useState("");
-
-  const visibleProducts = products.filter((product) => {
-    const searchableText = product.name + product.vehicle + product.code;
-    const matchesSearch = searchableText.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  function contactUs() {
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-  }
-
-  return (
-    <section className="content-section" id="products">
-      <p className="small-title">PARTS CATALOGUE</p>
-      <h2>Find your part in seconds</h2>
-
-      <input
-        className="search"
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-        placeholder="Search by part, vehicle or part number"
-      />
-
-      <div className="filter-buttons">
-        {["All", ...categories.map((item) => item.name)].map((name) => (
-          <button
-            key={name}
-            className={selectedCategory === name ? "active" : ""}
-            onClick={() => setSelectedCategory(name)}
-          >
-            {name}
-          </button>
-        ))}
-      </div>
-
-      <div className="product-grid">
-        {visibleProducts.map((product) => {
-          const category = categories.find((item) => item.name === product.category);
-          return (
-            <article className="product-card" key={product.code}>
-              <div className="product-image">
-                {product.image
-                  ? <img src={product.image} alt={product.name} />
-                  : <span>{category?.icon}</span>}
-                <small>{product.label}</small>
-              </div>
-              <div className="product-details">
-                <small>{product.code}</small>
-                <h3>{product.name}</h3>
-                <p>{product.vehicle}</p>
-                <button onClick={contactUs}>Check availability →</button>
-              </div>
-            </article>
-          );
-        })}
-      </div>
-
-      {visibleProducts.length === 0 && (
-        <div className="no-results">No matching parts found. Please send us an enquiry.</div>
-      )}
-    </section>
-  );
+  const term = search.toLowerCase().trim();
+  const visibleProducts = products.filter(product => (selectedCategory === "All" || product.category === selectedCategory) && (!term || `${product.name} ${product.vehicle} ${product.code}`.toLowerCase().includes(term)));
+  const contactUs = () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  return <section className="finder" id="catalogue"><div><p className="section-kicker">PART FINDER</p><h2>Find your part in seconds</h2></div><div className="search-box"><Search size={21}/><input value={search} onChange={event => setSearch(event.target.value)} placeholder="Search by part, vehicle or part number…" aria-label="Search spare parts"/>{search && <button onClick={() => setSearch("")} aria-label="Clear search"><X size={18}/></button>}</div><div className="filters">{["All", ...categories.map(item => item.name)].map(name => <button key={name} className={selectedCategory === name ? "active" : ""} onClick={() => setSelectedCategory(name)}>{name}</button>)}</div><div className="parts-grid">{visibleProducts.map((product,index) => { const Icon = icons[product.category]; return <article className="part-card" key={product.code}><div className={`part-image tone-${index % 4}`}><span>{product.label}</span>{product.image ? <img src={product.image} alt={product.name}/> : <Icon/>}</div><div className="part-info"><small>{product.code}</small><h3>{product.name}</h3><p>{product.vehicle}</p><button onClick={contactUs}>Check availability <ChevronRight size={17}/></button></div></article>; })}{!visibleProducts.length && <div className="empty-state"><Search/><h3>No exact match yet</h3><p>Send us your vehicle model or chassis number and our team will help.</p><button className="primary" onClick={contactUs}>Request this part</button></div>}</div></section>;
 }

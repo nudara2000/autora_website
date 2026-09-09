@@ -1,17 +1,6 @@
+import { PackageCheck } from "lucide-react";
+const benefits = [["01","Carefully sourced","Selected parts from trusted automotive suppliers."],["02","Fitment support","Share your chassis number so we can check compatibility."],["03","Clear communication","Real availability updates without unnecessary delays."]];
+
 export default function WhyAutora() {
-  return (
-    <section className="about" id="about">
-      <div className="about-image">A</div>
-      <div>
-        <p className="small-title">WHY AUTORA?</p>
-        <h2>Confidence in every kilometre</h2>
-        <p>We help customers find compatible vehicle parts and arrange reliable delivery.</p>
-        <ul>
-          <li><strong>Carefully sourced:</strong> Parts from trusted suppliers.</li>
-          <li><strong>Fitment support:</strong> We help check vehicle compatibility.</li>
-          <li><strong>Clear communication:</strong> Honest availability updates.</li>
-        </ul>
-      </div>
-    </section>
-  );
+  return <section className="why" id="why-us"><div className="why-visual"><div className="inspection-card"><PackageCheck/><strong>Every part inspected</strong><span>Checked before dispatch</span></div></div><div className="why-copy"><p className="section-kicker">THE AUTORA STANDARD</p><h2>More confidence in every kilometre.</h2><p>Finding a spare part should not feel uncertain. We help you identify the correct fit, verify its condition and arrange reliable delivery.</p>{benefits.map(item => <div className="benefit" key={item[0]}><span>{item[0]}</span><div><strong>{item[1]}</strong><p>{item[2]}</p></div></div>)}</div></section>;
 }

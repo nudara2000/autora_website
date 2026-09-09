@@ -1,10 +1,10 @@
 // Edit this file to change categories and products.
 
 export const categories = [
-  { name: "Body Parts", icon: "🚘", description: "Bumpers, bonnets and panels" },
-  { name: "Engine", icon: "⚙️", description: "Reliable engine parts" },
-  { name: "Lighting", icon: "💡", description: "Headlights, lamps and LEDs" },
-  { name: "Suspension", icon: "🔧", description: "Parts for smooth handling" }
+  { name: "Body Parts", icon: "car", description: "Bumpers, bonnets & panels" },
+  { name: "Engine", icon: "cog", description: "Reliable powertrain parts" },
+  { name: "Lighting", icon: "zap", description: "Headlights, lamps & LEDs" },
+  { name: "Suspension", icon: "gauge", description: "Smooth, stable handling" }
 ];
 
 export const products = [
