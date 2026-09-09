@@ -36,12 +36,12 @@ export default function Contact() {
           >
             <span><MessageCircle aria-hidden="true" /> Quick WhatsApp support</span>
           </a>
-          <span style={{ flexWrap: "wrap" }}>
-            <ShoppingBag aria-hidden="true" /> Retail &amp; trade enquiries:
-            <a href="tel:+94711000666" style={{ color: "inherit", textUnderlineOffset: "4px" }}>
-              0711000666
-            </a>
-          </span>
+          <a
+            href={`https://wa.me/94711000666?text=${encodeURIComponent("Hello Autora, I have a retail or trade enquiry.")}`}
+            style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "4px" }}
+          >
+            <span><ShoppingBag aria-hidden="true" /> Retail &amp; trade enquiries</span>
+          </a>
         </div>
       </div>
       <form onSubmit={sendEnquiry}>
