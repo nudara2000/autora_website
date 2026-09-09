@@ -36,7 +36,12 @@ export default function Contact() {
           >
             <span><MessageCircle aria-hidden="true" /> Quick WhatsApp support</span>
           </a>
-          <span><ShoppingBag aria-hidden="true" /> Retail & trade enquiries</span>
+          <span style={{ flexWrap: "wrap" }}>
+            <ShoppingBag aria-hidden="true" /> Retail &amp; trade enquiries:
+            <a href="tel:+94711000666" style={{ color: "inherit", textUnderlineOffset: "4px" }}>
+              0711000666
+            </a>
+          </span>
         </div>
       </div>
       <form onSubmit={sendEnquiry}>
