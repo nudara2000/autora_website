@@ -37,3 +37,14 @@ button:focus-visible,a:focus-visible{outline:3px solid #008c91;outline-offset:4p
 @media(max-width:1000px){.truck-hero{grid-template-columns:1fr 1fr}.brand-gallery>div{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.truck-hero{grid-template-columns:1fr}.truck-hero-image{min-height:0;max-height:620px}.truck-hero-image>img{max-height:620px;object-fit:contain}.brand-strip strong{font-size:1.2rem}.brand-gallery{padding:4rem 5vw}.brand-gallery img{height:220px}.nav-wrap{gap:1rem}.announcement{font-size:.75rem;text-align:center}}
 @media(max-width:400px){.brand-gallery>div{grid-template-columns:1fr}}
+
+
+/* Responsive supported-brand strip */
+.brand-strip{padding:2rem 5vw 0;background:#fff;border-bottom:1px solid var(--border)}
+.brand-strip>p{margin:0 0 1.2rem;color:var(--primary);font-size:.875rem;font-weight:800;letter-spacing:.12em}
+.brand-logo-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));width:100%;border-top:1px solid #e1e6e7}
+.brand-logo-cell{min-width:0;min-height:138px;display:grid;place-items:center;padding:1.25rem;border-right:1px solid #e1e6e7}
+.brand-logo-cell:last-child{border-right:0}
+.brand-logo-image{display:block;width:min(104px,100%);height:68px;object-fit:contain}
+@media(max-width:900px){.brand-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.brand-logo-cell{border-bottom:1px solid #e1e6e7}.brand-logo-cell:nth-child(3n){border-right:0}}
+@media(max-width:540px){.brand-strip{padding:1.6rem 5vw 0}.brand-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-logo-cell{min-height:112px;padding:1rem;border-right:1px solid #e1e6e7}.brand-logo-cell:nth-child(3n){border-right:1px solid #e1e6e7}.brand-logo-cell:nth-child(2n){border-right:0}.brand-logo-image{width:min(92px,100%);height:56px}}
