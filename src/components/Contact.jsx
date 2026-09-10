@@ -29,6 +29,18 @@ export default function Contact() {
           Send the vehicle make, model, year and chassis number.
           Our parts team will respond with availability.
         </p>
+        <div className="visit-details">
+          <h3>Visit Autora</h3>
+          <address>No.17 A, Horana Road, Kesbewa, Piliyandala</address>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=No.17+A+Horana+Road+Kesbewa+Piliyandala" target="_blank" rel="noreferrer">Find us on Google Maps ↗</a>
+          <p><strong>Online orders &amp; delivery available.</strong><br/>Contact us to confirm the part, price and delivery arrangements.</p>
+          <p><a href="tel:+94711000333">071 1000 333</a> · <a href="tel:+94711000666">071 1000 666</a></p>
+          <div className="social-links">
+            <a href="https://www.facebook.com/autorapvtltd/" target="_blank" rel="noreferrer">Facebook ↗</a>
+            <a href="https://www.instagram.com/p/DcabB9Gkvgt/" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a href="https://www.youtube.com/@Autorapvtltd" target="_blank" rel="noreferrer">YouTube ↗</a>
+          </div>
+        </div>
         <div className="contact-points">
           <a
             href={whatsappUrl("Hello Autora, I need help finding a spare part.")}
@@ -55,7 +67,7 @@ export default function Contact() {
         </label>
         <label>
           Vehicle & part
-          <textarea name="part" required placeholder="Example: Toyota Aqua 2018, left headlight" rows="3" />
+          <textarea name="part" required placeholder="Example: Isuzu truck, chassis number, left headlight" rows="3" />
         </label>
         <button className="primary" type="submit">
           Send enquiry <ArrowRight size={18} aria-hidden="true" />

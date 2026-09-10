@@ -1,9 +1,20 @@
-import { ArrowRight, BadgeCheck, CarFront, CircleGauge, Cog, MessageCircle, ShieldCheck, Truck } from "lucide-react";
-
+import { ArrowRight, Truck, PackageCheck, MessageCircle } from "lucide-react";
+const brands = ["Mitsubishi", "Isuzu", "Nissan", "Mazda", "Toyota", "Hino"];
 export default function Hero() {
-  const goTo = id => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  return <section className="hero" id="top">
-    <div className="hero-copy"><p className="eyebrow"><span/> Trusted vehicle spare parts</p><h1>The right part.<br/><em>Right when you need it.</em></h1><p className="hero-text">Quality-tested spare parts for Japanese vehicles, sourced with care and delivered across Sri Lanka.</p><div className="hero-actions"><button className="primary" onClick={() => goTo("catalogue")}>Explore parts <ArrowRight size={18}/></button><button className="secondary" onClick={() => goTo("contact")}><MessageCircle size={18}/> Request a part</button></div><div className="trust-row"><span><BadgeCheck size={18}/> Quality checked</span><span><Truck size={18}/> Fast delivery</span><span><ShieldCheck size={18}/> Trusted support</span></div></div>
-    <div className="hero-visual" aria-label="Autora featured spare parts"><div className="visual-grid"/><div className="part-orbit orbit-one"><Cog/></div><div className="part-orbit orbit-two"><CarFront/></div><div className="hero-badge"><span>10+</span> years of<br/>parts expertise</div><div className="hero-product"><div className="product-icon"><CircleGauge/></div><small>FEATURED THIS WEEK</small><strong>Premium brake systems</strong><span>Built for safety. Ready for the road.</span></div></div>
-  </section>;
+  return <>
+    <section className="hero truck-hero" id="top">
+      <div className="hero-copy">
+        <p className="eyebrow">JAPAN TO SRI LANKA · AUTORA</p>
+        <h1>Built for work.<br/><em>Back on the road.</em></h1>
+        <p className="hero-text">Brand-new and reconditioned truck spare parts imported from Japan. Find the parts your truck needs with Autora.</p>
+        <div className="hero-actions">
+          <a className="primary" href="#catalogue">Explore truck parts <ArrowRight size={18}/></a>
+          <a className="secondary" href="#contact"><MessageCircle size={18}/> Ask our team</a>
+        </div>
+        <div className="trust-row"><span><PackageCheck size={18}/> New & reconditioned</span><span><Truck size={18}/> Online orders & delivery available</span></div>
+      </div>
+      <div className="truck-hero-image"><img src="/images/autora-building.webp" alt="Autora premises in Kesbewa" fetchPriority="high"/><div className="image-caption">Your next journey starts with the right part.</div></div>
+    </section>
+    <section className="brand-strip" aria-label="Truck brands we supply"><p>JAPANESE BRANDS. LOCAL SUPPORT.</p><div>{brands.map(brand=><strong key={brand}>{brand}</strong>)}<span>& many more</span></div></section>
+  </>;
 }

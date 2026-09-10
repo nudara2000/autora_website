@@ -5,6 +5,7 @@ import PartsCatalogue from "./components/PartsCatalogue";
 import Categories from "./components/Categories";
 import WhyAutora from "./components/WhyAutora";
 import Contact from "./components/Contact";
+import BrandGallery from "./components/BrandGallery";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
       <PartsCatalogue selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
       <Categories onSelectCategory={selectCategory} />
       <WhyAutora />
+      <BrandGallery />
       <Contact />
       <Footer />
     </main>

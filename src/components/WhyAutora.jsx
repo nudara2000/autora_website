@@ -1,44 +1,19 @@
-import { PackageCheck } from "lucide-react";
-
+import { PackageCheck, Truck, MessageCircle } from "lucide-react";
 const benefits = [
-  ["01", "Carefully sourced", "Selected parts from trusted automotive suppliers."],
-  ["02", "Fitment support", "Share your chassis number so we can check compatibility."],
-  ["03", "Clear communication", "Real availability updates without unnecessary delays."],
+  [PackageCheck,"Two ways to keep moving","Choose brand-new or reconditioned parts to suit your truck and requirements."],
+  [MessageCircle,"Let’s find the right fit","Send your truck make, model, chassis number and a photo of the part. Our team will help with your enquiry."],
+  [Truck,"Order online. Arrange delivery.","Enquire from wherever you are. Ask our team about delivery to your location, charges and timings."]
 ];
-
 export default function WhyAutora() {
-  return (
-    <section className="why" id="why-us">
-      <div style={{ minWidth: 0, background: "#0c1113", padding: "2rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1.5rem" }}>
-        <video
-          controls
-          playsInline
-          preload="none"
-          poster="/images/autora-video-poster.jpg"
-          aria-label="Autora company video"
-          width="480"
-          height="848"
-          style={{ display: "block", width: "100%", maxWidth: "360px", height: "auto", aspectRatio: "480 / 848", objectFit: "contain", background: "#000", borderRadius: "8px" }}
-        >
-          <source src="/videos/autora-company.mp4" type="video/mp4" />
-          Your browser does not support embedded video. <a href="/videos/autora-company.mp4">Watch the Autora video</a>.
-        </video>
-        <p style={{ display: "flex", alignItems: "center", gap: ".75rem", margin: 0 }}>
-          <PackageCheck aria-hidden="true" />
-          <span>Every part inspected · Checked before dispatch</span>
-        </p>
-      </div>
-      <div className="why-copy">
-        <p className="section-kicker">THE AUTORA STANDARD</p>
-        <h2>More confidence in every kilometre.</h2>
-        <p>Finding a spare part should not feel uncertain. We help you identify the correct fit, verify its condition and arrange reliable delivery.</p>
-        {benefits.map(([number, title, description]) => (
-          <div className="benefit" key={number}>
-            <span>{number}</span>
-            <div><strong>{title}</strong><p>{description}</p></div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+  return <section className="why" id="why-us">
+    <div className="company-film">
+      <p className="section-kicker">MEET AUTORA</p>
+      <video controls playsInline preload="none" poster="/images/autora-reveal-poster.jpg" width="720" height="1280" aria-label="Autora cinematic introduction">
+        <source src="/videos/autora-reveal.mp4" type="video/mp4"/>
+        Your browser does not support video. <a href="/videos/autora-reveal.mp4">Watch our introduction</a>.
+      </video>
+      <p>From Japan to your next journey.</p>
+    </div>
+    <div className="why-copy"><p className="section-kicker">THE AUTORA STANDARD</p><h2>For the trucks that keep business moving.</h2><p>We import truck spare parts from Japan, supplying brand-new and reconditioned options for Mitsubishi, Isuzu, Nissan, Mazda, Toyota, Hino and more.</p>{benefits.map(([Icon,title,description])=><div className="benefit" key={title}><Icon aria-hidden="true"/><div><strong>{title}</strong><p>{description}</p></div></div>)}</div>
+  </section>;
 }
