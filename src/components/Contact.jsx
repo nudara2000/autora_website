@@ -1,4 +1,7 @@
-import { ArrowRight, MessageCircle, ShoppingBag } from "lucide-react";
+import { ArrowRight, MessageCircle, ShoppingBag, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react";
+
+const linkStyle = { display: "inline-flex", alignItems: "center", gap: "0.45rem" };
+const iconStyle = { flexShrink: 0 };
 
 // Sri Lankan number 0711000333 in international format.
 const whatsappNumber = "94711000333";
@@ -32,13 +35,13 @@ export default function Contact() {
         <div className="visit-details">
           <h3>Visit Autora</h3>
           <address>No.17 A, Horana Road, Kesbewa, Piliyandala</address>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=No.17+A+Horana+Road+Kesbewa+Piliyandala" target="_blank" rel="noreferrer">Find us on Google Maps ↗</a>
+          <a style={linkStyle} href="https://www.google.com/maps/search/?api=1&amp;query=No.17+A+Horana+Road+Kesbewa+Piliyandala" target="_blank" rel="noreferrer"><MapPin size={19} style={iconStyle} aria-hidden="true" /> Find us on Google Maps</a>
           <p><strong>Online orders &amp; delivery available.</strong><br/>Contact us to confirm the part, price and delivery arrangements.</p>
-          <p><a href="tel:+94711000333">071 1000 333</a> · <a href="tel:+94711000666">071 1000 666</a></p>
+          <p><a style={linkStyle} href="tel:+94711000333"><Phone size={19} style={iconStyle} aria-hidden="true" /> 071 1000 333</a> · <a style={linkStyle} href="tel:+94711000666"><Phone size={19} style={iconStyle} aria-hidden="true" /> 071 1000 666</a></p>
           <div className="social-links">
-            <a href="https://www.facebook.com/autorapvtltd/" target="_blank" rel="noreferrer">Facebook ↗</a>
-            <a href="https://www.instagram.com/p/DcabB9Gkvgt/" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="https://www.youtube.com/@Autorapvtltd" target="_blank" rel="noreferrer">YouTube ↗</a>
+            <a style={linkStyle} href="https://www.facebook.com/autorapvtltd/" target="_blank" rel="noreferrer"><Facebook size={19} style={iconStyle} aria-hidden="true" /> Facebook</a>
+            <a style={linkStyle} href="https://www.instagram.com/p/DcabB9Gkvgt/" target="_blank" rel="noreferrer"><Instagram size={19} style={iconStyle} aria-hidden="true" /> Instagram</a>
+            <a style={linkStyle} href="https://www.youtube.com/@Autorapvtltd" target="_blank" rel="noreferrer"><Youtube size={19} style={iconStyle} aria-hidden="true" /> YouTube</a>
           </div>
         </div>
         <div className="contact-points">
