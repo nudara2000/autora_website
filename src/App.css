@@ -48,3 +48,15 @@ button:focus-visible,a:focus-visible{outline:3px solid #008c91;outline-offset:4p
 .brand-logo-image{display:block;width:min(104px,100%);height:68px;object-fit:contain}
 @media(max-width:900px){.brand-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.brand-logo-cell{border-bottom:1px solid #e1e6e7}.brand-logo-cell:nth-child(3n){border-right:0}}
 @media(max-width:540px){.brand-strip{padding:1.6rem 5vw 0}.brand-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-logo-cell{min-height:112px;padding:1rem;border-right:1px solid #e1e6e7}.brand-logo-cell:nth-child(3n){border-right:1px solid #e1e6e7}.brand-logo-cell:nth-child(2n){border-right:0}.brand-logo-image{width:min(92px,100%);height:56px}}
+
+
+/* One-row Autora photo carousel */
+.brand-gallery{position:relative;overflow:hidden}
+.brand-gallery-track{display:flex!important;grid-template-columns:none!important;gap:1.25rem;margin-top:2rem;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;padding-right:4rem}
+.brand-gallery-track::-webkit-scrollbar{display:none}
+.brand-gallery-item{flex:0 0 calc((100% - 3.75rem)/4);scroll-snap-align:start}
+.brand-gallery-item img{width:100%;height:340px;display:block;object-fit:cover;background:#e7edef;border-radius:6px}
+.gallery-next{position:absolute;right:5vw;top:50%;transform:translateY(35%);width:54px;height:54px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:#fff;box-shadow:0 10px 24px #10242730;z-index:2;transition:.2s}
+.gallery-next:hover{background:#087682;transform:translateY(35%) translateX(3px)}
+@media(max-width:1000px){.brand-gallery-item{flex-basis:calc((100% - 1.25rem)/2)}}
+@media(max-width:620px){.brand-gallery-track{gap:1rem;padding-right:2rem}.brand-gallery-item{flex-basis:86%}.brand-gallery-item img{height:300px}.gallery-next{right:6vw;width:48px;height:48px;transform:translateY(45%)}.gallery-next:hover{transform:translateY(45%) translateX(3px)}}
