@@ -1,13 +1,17 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
-// Curated display photos: similar showroom views are intentionally excluded.
+// Curated showroom and stock photos.
 const images = [
   ["autora-shop-7983.jpg", "Autora showroom and customer seating area"],
   ["autora-shop-7982.jpg", "Truck spare parts displayed on Autora showroom shelves"],
   ["autora-shop-7979.jpg", "Autora shop interior and parts displays"],
   ["autora-shop-7981.jpg", "Outdoor storage racks at Autora"],
   ["autora-shop-7984.jpg", "Truck body parts stored inside the Autora warehouse"],
+  ["autora-stock-bumpers.jpg", "Truck bumpers and body panels in Autora stock"],
+  ["autora-stock-grilles.jpg", "Truck grilles and front body parts on display"],
+  ["autora-stock-boxed-parts.jpg", "Boxed truck spare parts ready for delivery"],
+  ["autora-stock-steering-parts.jpg", "Truck steering and suspension parts in stock"],
 ];
 
 export default function BrandGallery() {
