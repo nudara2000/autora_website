@@ -25,34 +25,12 @@ export default function Hero() {
       <div className="truck-hero-image"><img src="/images/autora-building.webp" alt="Autora premises in Kesbewa" fetchPriority="high"/><div className="image-caption">Your next journey starts with the right part.</div></div>
     </section>
 
-    <section className="brand-strip" aria-label="Truck brands we supply" style={{ padding: "2rem 5vw 0" }}>
-      <p style={{ margin: "0 0 1.2rem" }}>JAPANESE BRANDS. LOCAL SUPPORT.</p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(6, minmax(0, 1fr))",
-          alignItems: "stretch",
-          gap: 0,
-          width: "100%",
-          borderTop: "1px solid #e1e6e7",
-        }}
-      >
-        {brands.map(({ name, src }, index) => (
-          <div
-            key={name}
-            style={{
-              minHeight: "130px",
-              display: "grid",
-              placeItems: "center",
-              padding: "1.5rem",
-              borderRight: index < brands.length - 1 ? "1px solid #e1e6e7" : 0,
-            }}
-          >
-            <img
-              src={src}
-              alt={name}
-              style={{ width: "96px", height: "64px", display: "block", objectFit: "contain" }}
-            />
+    <section className="brand-strip" aria-label="Truck brands we supply">
+      <p>JAPANESE BRANDS. LOCAL SUPPORT.</p>
+      <div className="brand-logo-grid">
+        {brands.map(({ name, src }) => (
+          <div className="brand-logo-cell" key={name}>
+            <img className="brand-logo-image" src={src} alt={name} />
           </div>
         ))}
       </div>
