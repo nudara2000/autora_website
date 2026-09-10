@@ -22,7 +22,7 @@ export default function Hero() {
         </div>
         <div className="trust-row"><span><PackageCheck size={18}/> New & reconditioned</span><span><Truck size={18}/> Online orders & delivery available</span></div>
       </div>
-      <div className="truck-hero-image"><img src="/images/autora-building.webp" alt="Autora premises in Kesbewa" fetchPriority="high"/><div className="image-caption">Your next journey starts with the right part.</div></div>
+      <div className="truck-hero-image"><img src="/images/autora-building-parts-lift.jpg" alt="Autora spare parts showroom and goods lift" fetchPriority="high"/><div className="image-caption">Your next journey starts with the right part.</div></div>
     </section>
 
     <section className="brand-strip" aria-label="Truck brands we supply">
