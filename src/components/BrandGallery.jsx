@@ -1,31 +1,57 @@
-// Display-only shop photos. Add new JPG filenames here to extend the gallery.
-const images = [
-  ["autora-shop-7983.jpg", "Autora showroom and customer seating area"],
-  ["autora-shop-7982.jpg", "Truck spare parts displayed on Autora showroom shelves"],
-  ["autora-shop-7979.jpg", "Autora shop interior and parts displays"],
-  ["autora-shop-7980.jpg", "Customer area beside the spare parts shelves"],
-  ["autora-shop-7981.jpg", "Outdoor storage racks at Autora"],
-  ["autora-shop-7984.jpg", "Truck body parts stored inside the Autora warehouse"],
+const brands = [
+  { name: "Mitsubishi", mark: "◆◆◆", className: "mitsubishi" },
+  { name: "Isuzu", mark: "ISUZU", className: "isuzu" },
+  { name: "Nissan", mark: "NISSAN", className: "nissan" },
+  { name: "Mazda", mark: "◖M◗", className: "mazda" },
+  { name: "Toyota", mark: "◎", className: "toyota" },
+  { name: "Hino", mark: "H", className: "hino" },
 ];
 
 export default function BrandGallery() {
   return (
     <section className="brand-gallery">
-      <p className="section-kicker">THIS IS AUTORA</p>
-      <h2>Inside Autora. Ready for the road.</h2>
-      <div style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))" }}>
-        {images.map(([image, description]) => (
-          <figure key={image}>
-            <img
-              src={"/images/" + image}
-              alt={description}
-              loading="lazy"
-              decoding="async"
-              width="960"
-              height="1280"
-              style={{ width: "100%", height: "auto", aspectRatio: "3 / 4", objectFit: "contain", cursor: "default" }}
-            />
-          </figure>
+      <p className="section-kicker">VEHICLE BRANDS WE SUPPORT</p>
+      <h2>Parts for trusted Japanese vehicles.</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+          gap: "1rem",
+          marginTop: "2rem",
+        }}
+      >
+        {brands.map(({ name, mark, className }) => (
+          <div
+            key={name}
+            aria-label={name}
+            style={{
+              minHeight: "190px",
+              display: "grid",
+              placeItems: "center",
+              alignContent: "center",
+              gap: "1rem",
+              padding: "1.5rem",
+              background: "#fff",
+              border: "1px solid #dbe1e3",
+            }}
+          >
+            <span
+              className={className}
+              aria-hidden="true"
+              style={{
+                fontFamily: "Arial Black, Arial, sans-serif",
+                fontSize: name === "Mitsubishi" ? "2.35rem" : "1.9rem",
+                fontWeight: 900,
+                letterSpacing: name === "Isuzu" ? "-.12em" : ".04em",
+                lineHeight: 1,
+              }}
+            >
+              {mark}
+            </span>
+            <strong style={{ fontSize: ".85rem", letterSpacing: ".12em", textTransform: "uppercase" }}>
+              {name}
+            </strong>
+          </div>
         ))}
       </div>
     </section>
