@@ -1,10 +1,10 @@
 const brands = [
-  { name: "Mitsubishi", mark: "◆◆◆", className: "mitsubishi" },
-  { name: "Isuzu", mark: "ISUZU", className: "isuzu" },
-  { name: "Nissan", mark: "NISSAN", className: "nissan" },
-  { name: "Mazda", mark: "◖M◗", className: "mazda" },
-  { name: "Toyota", mark: "◎", className: "toyota" },
-  { name: "Hino", mark: "H", className: "hino" },
+  { name: "Mitsubishi", mark: "◆◆◆", color: "#e60012" },
+  { name: "Isuzu", mark: "ISUZU", color: "#e31b23" },
+  { name: "Nissan", mark: "NISSAN", color: "#20242a" },
+  { name: "Mazda", mark: "◖M◗", color: "#1d2630" },
+  { name: "Toyota", mark: "◎", color: "#eb0a1e" },
+  { name: "Hino", mark: "H", color: "#e31b23" },
 ];
 
 export default function BrandGallery() {
@@ -20,7 +20,7 @@ export default function BrandGallery() {
           marginTop: "2rem",
         }}
       >
-        {brands.map(({ name, mark, className }) => (
+        {brands.map(({ name, mark, color }) => (
           <div
             key={name}
             aria-label={name}
@@ -36,9 +36,9 @@ export default function BrandGallery() {
             }}
           >
             <span
-              className={className}
               aria-hidden="true"
               style={{
+                color,
                 fontFamily: "Arial Black, Arial, sans-serif",
                 fontSize: name === "Mitsubishi" ? "2.35rem" : "1.9rem",
                 fontWeight: 900,
