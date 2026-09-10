@@ -25,16 +25,36 @@ export default function Hero() {
       <div className="truck-hero-image"><img src="/images/autora-building.webp" alt="Autora premises in Kesbewa" fetchPriority="high"/><div className="image-caption">Your next journey starts with the right part.</div></div>
     </section>
 
-    <section className="brand-strip" aria-label="Truck brands we supply">
-      <p>JAPANESE BRANDS. LOCAL SUPPORT.</p>
-      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1.25rem 2.1rem" }}>
-        {brands.map(({ name, src }) => (
-          <div key={name} style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-            <img src={src} alt={name} style={{ width: "34px", height: "34px", objectFit: "contain", display: "block" }} />
-            <strong style={{ fontSize: "1.2rem", whiteSpace: "nowrap" }}>{name}</strong>
+    <section className="brand-strip" aria-label="Truck brands we supply" style={{ padding: "2rem 5vw 0" }}>
+      <p style={{ margin: "0 0 1.2rem" }}>JAPANESE BRANDS. LOCAL SUPPORT.</p>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(6, minmax(0, 1fr))",
+          alignItems: "stretch",
+          gap: 0,
+          width: "100%",
+          borderTop: "1px solid #e1e6e7",
+        }}
+      >
+        {brands.map(({ name, src }, index) => (
+          <div
+            key={name}
+            style={{
+              minHeight: "130px",
+              display: "grid",
+              placeItems: "center",
+              padding: "1.5rem",
+              borderRight: index < brands.length - 1 ? "1px solid #e1e6e7" : 0,
+            }}
+          >
+            <img
+              src={src}
+              alt={name}
+              style={{ width: "96px", height: "64px", display: "block", objectFit: "contain" }}
+            />
           </div>
         ))}
-        <span>&amp; many more</span>
       </div>
     </section>
   </>;
