@@ -1,4 +1,4 @@
-import { Armchair, ArrowRight, CarFront, ChevronRight, CircleGauge, Cog, Package, Wrench, Zap } from "lucide-react";
+import { ArrowRight, CarFront, ChevronRight, CircleGauge, Cog, Zap } from "lucide-react";
 import { categories } from "../data";
 
 const icons = {
@@ -6,9 +6,9 @@ const icons = {
   cog: Cog,
   zap: Zap,
   gauge: CircleGauge,
-  cabin: Armchair,
-  heavy: Wrench,
-  accessories: Package,
+  cabin: CarFront,
+  heavy: Cog,
+  accessories: Zap,
 };
 
 export default function Categories({ onSelectCategory }) {
