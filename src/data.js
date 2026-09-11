@@ -3,10 +3,13 @@ export const categories = [
  {name:"Body Parts",icon:"car",description:"Grilles, bumpers & panels"},
  {name:"Engine",icon:"cog",description:"Truck engine components"},
  {name:"Lighting",icon:"zap",description:"Headlamps & lighting"},
- {name:"Suspension",icon:"gauge",description:"Suspension components"}
+ {name:"Suspension",icon:"gauge",description:"Suspension components"},
+ {name:"Truck Cabin",icon:"cabin",description:"Cabin, doors & mirrors"},
+ {name:"Heavy Items",icon:"heavy",description:"Heavy-duty truck components"},
+ {name:"Other Accessories",icon:"accessories",description:"Essential vehicle accessories"}
 ];
 
-// Extended categories used only in the Part Finder filters.
+// Extended categories used in the Part Finder filters.
 export const catalogueCategories = [
  "Body Parts",
  "Engine",
