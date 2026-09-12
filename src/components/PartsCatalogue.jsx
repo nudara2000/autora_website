@@ -10,6 +10,7 @@ const icons = {
   "Truck Cabin": CarFront,
   "Heavy Items": Cog,
   "Other Accessories": Zap,
+  "Chrome Truck Items": CarFront,
 };
 
 export default function PartsCatalogue({ selectedCategory, setSelectedCategory }) {
