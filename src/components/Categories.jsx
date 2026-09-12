@@ -9,6 +9,7 @@ const icons = {
   cabin: CarFront,
   heavy: Cog,
   accessories: Zap,
+  chrome: CarFront,
 };
 
 export default function Categories({ onSelectCategory }) {
