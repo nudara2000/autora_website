@@ -6,7 +6,8 @@ export const categories = [
  {name:"Suspension",icon:"gauge",description:"Suspension components"},
  {name:"Truck Cabin",icon:"cabin",description:"Cabin, doors & mirrors"},
  {name:"Heavy Items",icon:"heavy",description:"Heavy-duty truck components"},
- {name:"Other Accessories",icon:"accessories",description:"Essential vehicle accessories"}
+ {name:"Other Accessories",icon:"accessories",description:"Essential vehicle accessories"},
+ {name:"Chrome Truck Items",icon:"chrome",description:"Chrome grilles, trims & covers"}
 ];
 
 // Extended categories used in the Part Finder filters.
@@ -17,7 +18,8 @@ export const catalogueCategories = [
  "Suspension",
  "Truck Cabin",
  "Heavy Items",
- "Other Accessories"
+ "Other Accessories",
+ "Chrome Truck Items"
 ];
 
 export const products = [
@@ -27,5 +29,6 @@ export const products = [
  {name:"Suspension parts",vehicle:"Japanese trucks · Ask about fitment",category:"Suspension",code:"SUSPENSION",label:"Enquire with us",image:""},
  {name:"Truck cabin parts",vehicle:"Japanese trucks · Ask about fitment",category:"Truck Cabin",code:"CABIN",label:"Enquire with us",image:""},
  {name:"Heavy-duty truck items",vehicle:"Japanese trucks · Ask about fitment",category:"Heavy Items",code:"HEAVY",label:"Enquire with us",image:""},
- {name:"Truck accessories",vehicle:"Japanese trucks · Ask about fitment",category:"Other Accessories",code:"ACCESS",label:"Enquire with us",image:""}
+ {name:"Truck accessories",vehicle:"Japanese trucks · Ask about fitment",category:"Other Accessories",code:"ACCESS",label:"Enquire with us",image:""},
+ {name:"Chrome truck items",vehicle:"Japanese trucks · Ask about fitment",category:"Chrome Truck Items",code:"CHROME",label:"Enquire with us",image:""}
 ];
