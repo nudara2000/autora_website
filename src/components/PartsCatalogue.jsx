@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CarFront, ChevronRight, CircleGauge, Cog, Search, X, Zap } from "lucide-react";
 import { catalogueCategories, products } from "../data";
 
@@ -15,6 +15,7 @@ const icons = {
 
 export default function PartsCatalogue({ selectedCategory, setSelectedCategory }) {
   const [search, setSearch] = useState("");
+  const productRail = useRef(null);
   const term = search.toLowerCase().trim();
   const visibleProducts = products.filter(
     (product) =>
@@ -22,6 +23,15 @@ export default function PartsCatalogue({ selectedCategory, setSelectedCategory }
       (!term || `${product.name} ${product.vehicle} ${product.code}`.toLowerCase().includes(term))
   );
   const contactUs = () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  const moveProducts = () => {
+    const rail = productRail.current;
+    if (!rail) return;
+    rail.scrollBy({ left: Math.max(rail.clientWidth * 0.86, 260), behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    productRail.current?.scrollTo({ left: 0, behavior: "smooth" });
+  }, [selectedCategory, search]);
 
   return (
     <section className="finder" id="catalogue">
@@ -36,7 +46,8 @@ export default function PartsCatalogue({ selectedCategory, setSelectedCategory }
           <button key={name} className={selectedCategory === name ? "active" : ""} onClick={() => setSelectedCategory(name)}>{name}</button>
         ))}
       </div>
-      <div className="parts-grid">
+      <div className="parts-carousel">
+        <div className="parts-grid" ref={productRail}>
         {visibleProducts.map((product, index) => {
           const Icon = icons[product.category];
           return (
@@ -53,6 +64,8 @@ export default function PartsCatalogue({ selectedCategory, setSelectedCategory }
           );
         })}
         {!visibleProducts.length && <div className="empty-state"><Search/><h3>No exact match yet</h3><p>Send us your vehicle model or chassis number and our team will help.</p><button className="primary" onClick={contactUs}>Request this part</button></div>}
+        </div>
+        {visibleProducts.length > 3 && <button className="parts-next" onClick={moveProducts} aria-label="Show more parts"><ChevronRight size={24}/></button>}
       </div>
     </section>
   );
