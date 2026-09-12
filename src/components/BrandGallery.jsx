@@ -12,6 +12,8 @@ const images = [
   ["autora-stock-grilles.jpg", "Truck grilles and front body parts on display"],
   ["autora-stock-boxed-parts.jpg", "Boxed truck spare parts ready for delivery"],
   ["autora-stock-steering-parts.jpg", "Truck steering and suspension parts in stock"],
+  ["autora-chrome-parts-display.jpg", "Chrome truck parts on display at Autora"],
+  ["autora-parts-shelves.jpg", "Autora shelves stocked with truck spare parts"],
 ];
 
 export default function BrandGallery() {
